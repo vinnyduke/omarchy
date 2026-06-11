@@ -1,0 +1,36 @@
+# ISO build artifacts
+*.iso
+*.img
+work/
+out/
+release/
+airootfs/
+pkg/
+src/
+
+# Package artifacts
+*.pkg.tar.zst
+*.pkg.tar.xz
+*.pkg.tar.zst.sig
+
+# SquashFS images
+*.squashfs
+*.sfs
+
+# IDE / Editor temporaries
+*~
+*.swp
+*.swo
+*.swn
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Cache directories
+.cache/
+
+# OS files
+.Trash-*
+.crdownload
