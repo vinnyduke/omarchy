@@ -11,7 +11,8 @@
 - **alacritty**: Remplacé par Ghostty comme terminal par défaut
 - **jdk-openjdk**: Java non nécessaire sur le système
 - **kdenlive**: Éditeur vidéo non utilisé
-- **nvim**: Remplacé par nano comme éditeur par défaut
+- **nvim**: Retiré puis restauré — n'est plus l'éditeur par défaut (nano remplace) mais reste installé
+- **omarchy-nvim**: Retiré puis restauré — conservé avec nvim
 - **obs-studio**: Streaming non utilisé
 - **pinta**: Éditeur d'images non utilisé
 - **typora**: Éditeur markdown payant non utilisé
@@ -79,4 +80,4 @@ Les pilotes hardware suivants sont conservés dans les listes officielles pour g
 - **default/hypr/looknfeel.conf**: Layout scrolling → dwindle. Le scrolling était commenté dans la config utilisateur, pas activé. Gaps et bordures restaurés (5/10/2).
 - **default/hypr/autostart.conf**: Restauration complète des 13 exec-once upstream. Le fichier avait été vidé par l'agent autonome (remplacé par l'override utilisateur vide), ne laissant que swaybg. Le override `~/.config/hypr/autostart.conf` est revenu à son état pré-phase 2 (commentaires seuls).
 - **waybar.service**: Désactivé (`systemctl --user disable`). Waybar est maintenant géré par Hyprland via l'exec-once upstream.
-- **install/omarchy-base.packages**: Retrait de `omarchy-nvim` (oublié lors du retrait de nvim).
+- **install/omarchy-base.packages**: Restauration de `nvim` et `omarchy-nvim` (supprimés car nano est l'éditeur par défaut, mais l'utilisateur les conserve comme outils).
