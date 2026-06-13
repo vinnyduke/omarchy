@@ -1,10 +1,6 @@
 # Omarchy core package list installed via install/packaging/base.sh
 # This file is also used by the ISO builder when determining needs
 
-1password-beta
-1password-cli
-aether
-alacritty
 alsa-utils
 asdcontrol
 avahi
@@ -64,7 +60,6 @@ inetutils
 inxi
 iwd
 jq
-kdenlive
 kernel-modules-hook
 kvantum-qt5
 lazydocker
@@ -89,13 +84,10 @@ noto-fonts
 noto-fonts-cjk
 noto-fonts-emoji
 nss-mdns
-nvim
-obs-studio
 obsidian
 omarchy-nvim
 omarchy-walker
 pamixer
-pinta
 playerctl
 plocate
 plymouth
@@ -128,7 +120,6 @@ tmux
 tobi-try
 ttf-ia-writer
 ttf-jetbrains-mono-nerd
-typora
 tzupdate
 ufw
 ufw-docker
@@ -146,7 +137,11 @@ xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 xdg-terminal-exec
 xmlstarlet
-xournalpp
 yaru-icon-theme
 yay
 zoxide
+ghostty
+yazi
+atuin
+television
+git-delta

@@ -1,0 +1,17 @@
+# AUR packages — installés via yay -S --needed - < install/packaging/aur-packages.txt
+# Gérés séparément des listes officielles car pacman ne résout pas l'AUR
+ccstatusline
+python-rich-rst
+rich-cli
+rtk
+rtk-debug
+traur
+traur-debug
+
+# Apple T2 hardware support (kept for multi-architecture compatibility)
+apple-bcm-firmware
+apple-t2-audio-config
+linux-t2
+linux-t2-headers
+t2fanrd
+tiny-dfr
