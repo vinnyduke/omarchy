@@ -45,9 +45,9 @@
 
 ## 2026-06-13 — Configs Modifiées
 
-- **default/hypr/looknfeel.conf**: Thème Catppuccin (bordure #89b4fa), 8px rounding, dim inactive windows, scrolling layout, animations désactivées
-- **default/hypr/bindings.conf**: Remplacement des références 1password par rbw-menu
-- **default/hypr/autostart.conf**: Synchronisé avec la config utilisateur
+- **default/hypr/looknfeel.conf**: Thème Catppuccin, 8px rounding, animations upstream conservées. Layout dwindle (restauré après correction — scrolling était commenté dans la config utilisateur, pas activé). Gaps 5/10, border 2.
+- **default/hypr/bindings.conf**: Remplacement de `$passwordManager` par `rbw-menu` (corrigé post-vérification — sed initial non fonctionnel)
+- **default/hypr/autostart.conf**: Contient désormais l'exec-once pour le wallpaper (swaybg) au démarrage de Hyprland
 - **default/hypr/input.conf**: Synchronisé avec la config utilisateur (kb_layout=ca — valeur locale, adaptée à l'utilisateur du fork)
 
 ## 2026-06-13 — Configs Ajoutées
@@ -74,6 +74,9 @@
 Les pilotes hardware suivants sont conservés dans les listes officielles pour garantir l'installabilité sur toute architecture :
 - apple-*, intel-*, nvidia-*, broadcom-wl, asusctl, dell-xps-touchpad-haptics, macbook12-spi-driver-dkms, sof-firmware, thermald, tuxedo-drivers-nocompatcheck-dkms, vulkan-*, yt6801-dkms, etc.
 
-## 2026-06-13 — Correctif
+## 2026-06-13 — Correctifs
 
 - **default/hypr/looknfeel.conf**: Layout scrolling → dwindle. Le scrolling était commenté dans la config utilisateur, pas activé. Gaps et bordures restaurés (5/10/2).
+- **default/hypr/autostart.conf**: Ajout d'un exec-once pour lancer swaybg (wallpaper) au démarrage de Hyprland. Le wallpaper ne se lançait plus après redémarrage.
+- **waybar.service**: Service systemd utilisateur activé (`systemctl --user enable`). Était disabled, ce qui empêchait waybar de se lancer automatiquement avec la session graphique.
+- **install/omarchy-base.packages**: Retrait de `omarchy-nvim` (oublié lors du retrait de nvim).
