@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# Sélectionne un item du vault Bitwarden via Walker (dmenu)
+# Affiche le nom et l'utilisateur pour distinguer les entrées identiques
+# Utilise les UUIDs pour des opérations non ambiguës
+
+tmp=$(mktemp)
+trap 'rm -f "$tmp"' EXIT
+
+# Récupère les entrées avec nom, utilisateur et UUID
+# Affiche "nom — utilisateur" dans Walker, stocke l'UUID pour l'action
+rbw list --raw | jq -r '.[] | [((.name) + " — " + (.user // "-")), .id, .name] | @tsv' > "$tmp"
+
+# Walker dmenu : ne montre que la première colonne (nom — utilisateur)
+item=$(cut -f1 "$tmp" | walker -d -p "🔑 Bitwarden...")
+[[ -z "$item" ]] && exit 0
+
+# Récupère l'UUID et le nom réel via le numéro de ligne
+lineno=$(grep -n -F "$item" "$tmp" | cut -d: -f1 | head -1)
+uuid=$(sed -n "${lineno}p" "$tmp" | cut -f2)
+name=$(sed -n "${lineno}p" "$tmp" | cut -f3)
+
+action=$(printf "password\nusername\ntotp\nuri" |
+  walker -d -p "📋 $name >")
+
+case "$action" in
+  password)
+    rbw get "$uuid" | wl-copy
+    notify-send "rbw" "Mot de passe copié pour $name"
+    ;;
+  username)
+    rbw get --field username "$uuid" | wl-copy
+    notify-send "rbw" "Nom d'utilisateur copié pour $name"
+    ;;
+  totp)
+    rbw code "$uuid" | wl-copy
+    notify-send "rbw" "Code 2FA copié pour $name"
+    ;;
+  uri)
+    rbw get --field uri "$uuid" | wl-copy
+    notify-send "rbw" "URI copié pour $name"
+    ;;
+esac
