@@ -81,3 +81,14 @@ Les pilotes hardware suivants sont conservés dans les listes officielles pour g
 - **default/hypr/autostart.conf**: Restauration complète des 13 exec-once upstream. Le fichier avait été vidé par l'agent autonome (remplacé par l'override utilisateur vide), ne laissant que swaybg. Le override `~/.config/hypr/autostart.conf` est revenu à son état pré-phase 2 (commentaires seuls).
 - **waybar.service**: Désactivé (`systemctl --user disable`). Waybar est maintenant géré par Hyprland via l'exec-once upstream.
 - **install/omarchy-base.packages**: Restauration de `neovim` et `omarchy-nvim` (supprimés car nano est l'éditeur par défaut, mais l'utilisateur les conserve comme outils).
+- **config/alacritty/**: Supprimé (terminal remplacé par Ghostty, paquet déjà retiré)
+- **config/foot/**: Supprimé (terminal non utilisé)
+- **config/kitty/**: Supprimé (terminal non utilisé)
+- **config/Typora/**: Supprimé (éditeur payant non utilisé, paquet déjà retiré)
+- **default/alacritty/**: Supprimé (screensaver)
+- **default/foot/**: Supprimé (desktop file et screensaver)
+- **config/atuin/**: Ajouté (config shell history installé)
+- **config/ccstatusline/**: Ajouté (config ccstatusline AUR)
+- **config/rtk/**: Ajouté (config rtk AUR)
+- **config/television/**: Ajouté (config television)
+- **config/yazi/**: Ajouté (config yazi)
