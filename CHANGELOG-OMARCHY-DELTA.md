@@ -73,3 +73,7 @@
 
 Les pilotes hardware suivants sont conservés dans les listes officielles pour garantir l'installabilité sur toute architecture :
 - apple-*, intel-*, nvidia-*, broadcom-wl, asusctl, dell-xps-touchpad-haptics, macbook12-spi-driver-dkms, sof-firmware, thermald, tuxedo-drivers-nocompatcheck-dkms, vulkan-*, yt6801-dkms, etc.
+
+## 2026-06-13 — Correctif
+
+- **default/hypr/looknfeel.conf**: Layout scrolling → dwindle. Le scrolling était commenté dans la config utilisateur, pas activé. Gaps et bordures restaurés (5/10/2).
