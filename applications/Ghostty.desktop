@@ -1,15 +1,15 @@
 [Desktop Entry]
 Type=Application
-TryExec=alacritty
-Exec=alacritty
-Icon=Alacritty
+TryExec=ghostty
+Exec=ghostty
+Icon=com.mitchellh.ghostty
 Terminal=false
 Categories=System;TerminalEmulator;
-Name=Alacritty
+Name=Ghostty
 GenericName=Terminal
-Comment=A fast, cross-platform, OpenGL terminal emulator
+Comment=A fast, feature-rich, cross-platform terminal emulator
 StartupNotify=true
-StartupWMClass=Alacritty
+StartupWMClass=com.mitchellh.ghostty
 Actions=New;
 X-TerminalArgExec=-e
 X-TerminalArgAppId=--class=
@@ -18,4 +18,4 @@ X-TerminalArgDir=--working-directory=
 
 [Desktop Action New]
 Name=New Terminal
-Exec=alacritty
+Exec=ghostty
